@@ -24,7 +24,6 @@ const Hero = () => {
     {/* Hero Content */}
     <div className="relative z-10 flex items-center justify-center h-full">
       <h1 className="text-5xl font-bold text-white animate-fade-in-up">
-        Welcome to Our Platform
       </h1>
     </div>
  

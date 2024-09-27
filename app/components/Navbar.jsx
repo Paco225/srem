@@ -1,5 +1,5 @@
 'use client'
-import logo from '../logo.png'
+import logo from '../public/logo.png'
 
 import { useState } from 'react'
 import Image from 'next/image'
@@ -41,7 +41,7 @@ export default function SimpleModernHeader() {
 
           <div className="flex items-center space-x-4">
             <button
-              className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
+              className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 via-red-500 to-yellow-400 rounded-md  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
             >
               Contactez nous
             </button>
