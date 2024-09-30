@@ -15,11 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+     
         <Navbar />
+        <WhatsAppButton />
         <Hero />
         {children}
         <Footer /> 
-        <WhatsAppButton />
       </body>
     </html>
   );

@@ -14,10 +14,10 @@ const Newsletter = () => {
         viewport={{ once: true }}
       >
         <h1 className=" text-center text-4xl sm:text-5xl font-bold text-white mb-4">
-          Prenez rendez-vous<span className="text-green-300 text-center"> avec nous</span>
+          Prenez rendez-vous<span className="text-yellow-400 text-center"> avec nous</span>
         </h1>
         <p className="text-white mb-8 text-center">
-          We make it so simple you won't need the hassle.
+        Nous le rendons si simple que vous n’aurez pas besoin de vous embêter.
         </p>
         <div className="flex justify-center">
           <input

@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 export default function SimpleModernHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // État pour gérer le flou
+  const [isScrolled, setIsScrolled] = useState(false); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +43,6 @@ export default function SimpleModernHeader() {
       transition: { duration: 0.5, ease: 'easeInOut' },
     },
   };
-
   const buttonHoverVariants = {
     rest: { scale: 1, boxShadow: '0px 0px 0px rgba(255, 255, 255, 0)' },
     hover: {
@@ -52,9 +51,8 @@ export default function SimpleModernHeader() {
       transition: { duration: 0.4, ease: 'easeInOut' },
     },
   };
-
   return (
-    <header className={`sticky top-0 z-50 w-full bg-white shadow-sm items-center transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-white/40' : ''}`}>
+    <header className={`sticky top-0 z-50 w-full bg-white shadow-lg items-center transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-white/60' : ''}`}>
       <div className="container mx-auto px-4 items-center">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
@@ -70,9 +68,9 @@ export default function SimpleModernHeader() {
           <nav
             className={`${
               isMenuOpen ? 'flex' : 'hidden'
-            } absolute left-0 right-0 top-16 flex-col items-center space-y-4 p-4 shadow-md md:static md:flex md:flex-row md:space-x-6 md:space-y-0 md:p-0 md:shadow-none`}
+            } absolute left-0 right-0 top-16 flex-col items-center space-y-4 p-4 shadow-md md:static md:flex md:flex-row md:space-x-6 md:space-y-0 md:p-0 md:shadow-none text-[15px] text-gray-800`}
           >
-            {['Accueil', 'Présentation', 'Services', 'Réalisation', 'Carrière'].map((item) => (
+            {['Accueil', 'Presentation', 'Services', 'Realisation', 'Carriere'].map((item) => (
               <motion.div
                 key={item}
                 initial="rest"
@@ -82,7 +80,8 @@ export default function SimpleModernHeader() {
                 className="relative"
               >
                 <Link
-                  href={`../pages/${item.toLowerCase()}`}
+                 scroll={true}
+                  href={item === 'Accueil' ? '/' : `../pages/${item.toLowerCase()}`}
                   className="text-gray-800 transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >

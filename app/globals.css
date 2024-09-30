@@ -26,3 +26,16 @@
 .fixed {
   position: fixed;
 }
+
+body {
+  animation: scrollToTop 0.1s ease-in-out forwards; /* Animation qui remet en haut */
+}
+
+@keyframes scrollToTop {
+  from {
+    transform: translateY(100vh); /* Commence en bas de la page */
+  }
+  to {
+    transform: translateY(0); /* Se termine en haut de la page */
+  }
+}

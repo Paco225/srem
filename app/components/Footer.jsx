@@ -46,15 +46,15 @@ export default function Footer() {
           variants={itemVariants}
           className="col-span-1 md:col-span-3 lg:col-span-1"
         >
-          <h2 className="text-2xl font-bold mb-2">Be Future-Ready</h2>
-          <p className="mb-4">Get exclusive digital marketing updates straight to your inbox.</p>
+          <h2 className="text-2xl font-bold mb-2">Soyez prêt</h2>
+          <p className="mb-4">Recevez des mises à jour exclusives directement dans votre boîte de réception.</p>
           <form onSubmit={handleSubmit} className="flex">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
-              className="flex-grow bg-gray-100 text-gray-900 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#fd053f]"
+              className="flex-grow bg-gray-100 text-gray-900 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#fd053f]"
               required
             />
             <button
@@ -67,39 +67,44 @@ export default function Footer() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center">
-          <h3 className="text-lg font-bold mb-4">About</h3>
+          <h3 className="text-[16px] font-bold mb-4">Liens utiles</h3>
           <ul className="space-y-2 text-center">
             <li>
-              <a href="#" className="font-bold hover:text-[#fd053f] transition duration-300">
-                Our Team
+              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+                Présentation
               </a>
             </li>
             <li>
-              <a href="#" className="font-bold hover:text-[#fd053f] transition duration-300">
-                Careers
+              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+                Services
               </a>
             </li>
             <li>
-              <a href="#" className="font-bold hover:text-[#fd053f] transition duration-300">
-                Press
+              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+                Réalisation
+              </a>
+            </li>
+            <li>
+              <a href="#" className=" hover:text-[#fd053f] transition duration-300">
+                Carrière
               </a>
             </li>
           </ul>
         </motion.div>
 
         <motion.div variants={itemVariants} className="col-span-1 md:col-span-3 lg:col-span-1">
-          <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-          <p>+65 6123 4567</p>
-          <p>hello@futuremarketer.co</p>
-          <p>One North B1-03, Singapore 088885</p>
+          <h3 className="text-[16px] font-bold mb-4">Contactez nous</h3>
+          <p>22 06 789 000</p>
+          <p>srem@gmail.com</p>
+          <p>Cote d'ivoire, Abidjan</p>
         </motion.div>
       </div>
 
       <motion.div
         variants={itemVariants}
-        className="mt-8 pt-8 border-t border-gray-200 flex flex-col items-center"
+        className="mt-8 pt-8 border-t border-gray-300 flex flex-col items-center"
       >
-        <p className="font-bold text-sm mb-4 text-center">© 2023 FutureMarketer Private Ltd. All Rights Reserved.</p>
+        <p className="font-bold text-sm mb-4 text-center">© designed by Agence MOSES ART. All Rights Reserved.</p>
       </motion.div>
     </motion.footer>
   );

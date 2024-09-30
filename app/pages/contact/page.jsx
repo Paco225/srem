@@ -82,7 +82,6 @@ export default function Contact() {
               </div>
             </div>
           </motion.div>
-
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
               className="w-full h-60 md:h-80 lg:h-96"
@@ -94,16 +93,10 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      <motion.div variants={itemVariants} className="bg-yellow-50 p-6 rounded-lg shadow-sm">
-      <motion.div variants={itemVariants} className="mb-12">
-          <span className="inline-block  bg-pink-100 rounded-full px-4 py-2 text-pink-600 font-semibold text-sm mb-4">
-            Boite à suggestion
-          </span>
-  
-        </motion.div>
+      <div>
+      </div>
+      <motion.div variants={itemVariants} className="bg-yellow-200 p-6 rounded-lg shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
           <div className="flex items-center justify-center">
             <Image
               src={imag}
@@ -141,7 +134,6 @@ export default function Contact() {
           </div>
         </div>
       </motion.div>
-      
       <ContactForm />
     </motion.section>
   )
