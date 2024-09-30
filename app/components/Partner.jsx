@@ -74,7 +74,7 @@ export default function OurCustomers() {
           Ils nous ont fais confiance et on été satisfait
         </p>
       </motion.div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto bg-white">
         {customers.map((customer, index) => (
           <motion.div
             key={customer.name}

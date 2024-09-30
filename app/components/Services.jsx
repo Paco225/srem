@@ -8,18 +8,18 @@ import { useInView } from "react-intersection-observer";
 const features = [
   {
     icon: <ChartBar className="w-6 h-6 text-red-500" />,
-    title: "Analytics",
+    title: "Analyse",
     description: "Analytics for your cases and your files.",
   },
   {
     icon: <Lock className="w-6 h-6 text-red-500" />,
-    title: "Security",
+    title: "Securité",
     description:
       "With bank-grade data protection, your confidential client files are secure.",
   },
   {
     icon: <FileText className="w-6 h-6 text-red-500" />,
-    title: "Document Management",
+    title: "Management",
     description:
       "Have full control over your documents. Create folders, upload files, move files, and even more.",
   },
@@ -48,10 +48,10 @@ const itemVariants = {
   },
 };
 
-export default function Service() {
+export default function Services() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2, // Animation trigger quand 20% du composant est visible
+    threshold: 0.2,
   });
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function Service() {
   }, [controls, inView]);
 
   return (
-    <div className="bg-yellow-400 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#f9c905] py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         ref={ref}
         className="max-w-7xl mx-auto"
@@ -71,12 +71,7 @@ export default function Service() {
         animate={controls}
         variants={containerVariants}
       >
-        <motion.h2
-          className="text-3xl font-bold text-gray-900 text-center mb-16"
-          variants={itemVariants}
-        >
-          Nous offrons les meilleurs services
-        </motion.h2>
+       
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
@@ -90,7 +85,7 @@ export default function Service() {
 function FeatureCard({ feature }) {
   return (
     <motion.div
-      className="relative bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-shadow duration-300 max-w-xs"
+      className="relative bg-white rounded-lg shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300 max-w-xs"
       variants={itemVariants}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
