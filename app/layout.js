@@ -10,14 +10,12 @@ export const metadata = {
   title: "SREM",
   description: "Site web SREM",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-     
+      <WhatsAppButton/>
         <Navbar />
-        <WhatsAppButton />
         <Hero />
         {children}
         <Footer /> 

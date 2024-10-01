@@ -53,7 +53,7 @@ export default function Footer() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email address"
+              placeholder="Adresse Email"
               className="flex-grow bg-gray-100 text-gray-900 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#fd053f]"
               required
             />

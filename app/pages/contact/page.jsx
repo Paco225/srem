@@ -87,7 +87,7 @@ export default function Contact() {
               className="w-full h-60 md:h-80 lg:h-96"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126744.10863101986!2d-4.784346589607108!3d5.818823548754847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc2b9f73b303b2d%3A0xe33a7db4a10aa90!2sDivo!5e0!3m2!1sen!2sci!4v1696086173172!5m2!1sen!2sci"
               allowFullScreen=""
-              loading="lazy"
+              loading='eager'
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
@@ -112,7 +112,7 @@ export default function Contact() {
               Vous avez des suggestions à nous faire part ?
             </p>
             <p className="text-gray-600 mb-6">
-              Envoyez nous vos suggestions de façon anonyme
+              Envoyez les nous e façon anonyme
             </p>
             <form onSubmit={handleSubmit}>
               <textarea

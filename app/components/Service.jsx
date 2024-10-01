@@ -9,19 +9,19 @@ const features = [
   {
     icon: <ChartBar className="w-6 h-6 text-red-500" />,
     title: "Analytics",
-    description: "Analytics for your cases and your files.",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
   },
   {
     icon: <Lock className="w-6 h-6 text-red-500" />,
     title: "Security",
-    description:
-      "With bank-grade data protection, your confidential client files are secure.",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
+
   },
   {
     icon: <FileText className="w-6 h-6 text-red-500" />,
     title: "Document Management",
-    description:
-      "Have full control over your documents. Create folders, upload files, move files, and even more.",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
+
   },
 ];
 

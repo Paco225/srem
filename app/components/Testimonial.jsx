@@ -15,7 +15,7 @@ const testimonials = [
     id: 2,
     name: 'Moise YAPO',
     location: 'CEO Agence MOSES ART',
-    text: 'We had a great time staying here. Arrival was seamless and location is great. We\'re making plans to be here for our next stay.',
+    text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, error amet ex asperiores magni reprehenderit illum et quaerat sequi natus?',
   },
   {
     id: 3,
