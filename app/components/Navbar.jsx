@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-
 export default function SimpleModernHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); 
@@ -64,13 +63,12 @@ export default function SimpleModernHeader() {
               className="w-24"
             />
           </Link>
-
           <nav
             className={`${
               isMenuOpen ? 'flex' : 'hidden'
             } absolute left-0 right-0 top-16 flex-col items-center space-y-4 p-4 shadow-md md:static md:flex md:flex-row md:space-x-6 md:space-y-0 md:p-0 md:shadow-none text-[15px] text-gray-800`}
           >
-            {['Accueil', 'Presentation', 'Services', 'Realisation', 'Carriere'].map((item) => (
+            {['Accueil', 'Presentation', 'Services', 'Realisation', 'Carriere','Secteur'].map((item) => (
               <motion.div
                 key={item}
                 initial="rest"
@@ -79,7 +77,7 @@ export default function SimpleModernHeader() {
                 variants={linkHoverVariants}
                 className="relative"
               >
-                <Link
+                <Link                
                  scroll={true}
                   href={item === 'Accueil' ? '/' : `../pages/${item.toLowerCase()}`}
                   className="text-gray-800 transition-colors duration-200"

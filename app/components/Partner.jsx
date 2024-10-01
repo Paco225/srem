@@ -3,12 +3,13 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import logo from '../public/logo.png'
+import image from '../public/Kadylogo.png'
 
 const customers = [
   { name: "Zapier", logo: logo },
-  { name: "Spotify", logo: logo },
+  { name: "Spotify", logo: image },
   { name: "Zoom", logo: logo },
-  { name: "Amazon", logo: logo },
+  { name: "Amazon", logo: image },
   { name: "Adobe", logo: logo },
 ]
 

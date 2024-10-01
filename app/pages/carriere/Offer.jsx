@@ -6,12 +6,12 @@ import Link from "next/link"
 
 
 const jobListings = [
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/carriere/details" },
+  { title: "Senior backend developper", location: "Abidjan", link: "/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
 ]
 
 export default function JobListings() {
@@ -69,7 +69,7 @@ export default function JobListings() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        <Link href="/all-jobs" className="bg-pink-200 text-pink-600 px-6 py-2 rounded-full font-semibold flex items-center hover:bg-pink-300 transition-colors">
+        <Link href="/" className="bg-pink-200 text-pink-600 px-6 py-2 rounded-full font-semibold flex items-center hover:bg-pink-300 transition-colors">
           Voir plus
           <ArrowRight className="ml-2" size={20} />
         </Link>
