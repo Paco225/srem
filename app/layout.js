@@ -13,12 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <WhatsAppButton />
       <body className="bg-gray-50">
-      <WhatsAppButton/>
         <Navbar />
         <Hero />
         {children}
-        <Footer /> 
+        <Footer />
       </body>
     </html>
   );

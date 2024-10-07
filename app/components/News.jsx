@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 import image from '../public/weare.png';
+import Link from 'next/link';
 
 const TourCard = ({ tour }) => {
   return (
@@ -72,13 +73,13 @@ const TourList = () => {
           <TourCard key={index} tour={tour} />
         ))}
       </div>
-
-      <div className="mt-14 flex justify-center">
+<Link href='../pages/Actualitetous'>
+<div className="mt-14 flex justify-center">
         <motion.button
           className="px-6 py-2 bg-red-100 text-[#fd053f] font-semibold rounded-full shadow-sm relative overflow-hidden"
           whileHover={{
-            backgroundColor: '#fd053f', // Couleur de fond grise foncée lors du survol
-            color: '#fff', // Couleur du texte blanche lors du survol
+            backgroundColor: '#fd053f', 
+            color: '#fff', 
             transition: { duration: 0.3 },
           }}
         >
@@ -97,6 +98,8 @@ const TourList = () => {
           />
         </motion.button>
       </div>
+</Link>
+     
     </div>
   );
 };

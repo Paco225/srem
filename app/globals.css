@@ -5,8 +5,7 @@
 *{
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-  
+  scroll-behavior: smooth; 
 }
 
 @keyframes fadeInUp {
@@ -28,14 +27,14 @@
 }
 
 body {
-  animation: scrollToTop 0.1s ease-in-out forwards; /* Animation qui remet en haut */
+  animation: scrollToTop 0.1s ease-in-out forwards; 
 }
 
 @keyframes scrollToTop {
   from {
-    transform: translateY(100vh); /* Commence en bas de la page */
+    transform: translateY(100vh); 
   }
   to {
-    transform: translateY(0); /* Se termine en haut de la page */
+    transform: translateY(0); 
   }
 }

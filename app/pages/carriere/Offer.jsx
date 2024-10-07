@@ -4,14 +4,13 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-
 const jobListings = [
-  { title: "Senior backend developper", location: "Abidjan", link: "/offer" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
-  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offer" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
+  { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
 ]
 
 export default function JobListings() {

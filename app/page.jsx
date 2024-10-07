@@ -8,6 +8,7 @@ import Partner from "./components/Partner";
 import Newsletter from "./components/Newsletter";
 import TourList from "./components/News";
 import Footer from "./components/Footer";
+import BusinessLunch from "./components/Menu";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
        <Service />
        <TestimonialCarousel />
        <Partner />
+       <BusinessLunch/>
        <TourList />
        <Newsletter />
     </>

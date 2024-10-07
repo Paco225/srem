@@ -15,7 +15,7 @@ export default function Component() {
   return (
     <div className="bg-white text-gray-900 p-6 md:p-12">
       <section className="mb-20 mt-4">
-        <h2 className="text-sm uppercase mb-2 text-gray-600">A propos de nous </h2>
+        <h2 className="text-lg uppercase mb-2 text-[#fd053f]">A propos de nous </h2>
         <div className="grid md:grid-cols-2 gap-14">
           <div className='w-[85%]'>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">SREM est le partenaire idéal pour votre business</h1>
@@ -68,7 +68,7 @@ export default function Component() {
           </div>
         </div>
         <div>
-          <h2 className="text-sm uppercase mb-2 text-gray-600">Pourquoi nous choisir ?</h2>
+          <h2 className="text-lg font- uppercase mb-2 text-[#fd053f]">Pourquoi nous choisir ?</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4">Grande avec expérience et expertise</h3>
           <p className="text-gray-600 mb-4 text-[1-px]">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, velit? Odio, eius, 
@@ -81,7 +81,7 @@ export default function Component() {
           <div className="h-1 w-12 bg-[#fd053f]"></div>
         </div>
       </section>
-      <section className="bg-gray-900 text-white p-8 mb-14 md:p-12 rounded-[18px]">
+      <section className="bg-gray-900 text-white p-8 mb-6 md:p-12 rounded-[18px]">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>

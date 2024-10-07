@@ -4,24 +4,29 @@ import { motion, useAnimation } from "framer-motion";
 import { ChartBar, Lock, FileText, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
+
 
 const features = [
   {
     icon: <ChartBar className="w-6 h-6 text-red-500" />,
     title: "Analyse",
     description: "Analytics for your cases and your files.",
+    Lien : '../pages/detailservice',
   },
   {
     icon: <Lock className="w-6 h-6 text-red-500" />,
     title: "Securité",
     description:
       "With bank-grade data protection, your confidential client files are secure.",
+    Lien : '../pages/detailservice',
   },
   {
     icon: <FileText className="w-6 h-6 text-red-500" />,
     title: "Management",
     description:
       "Have full control over your documents. Create folders, upload files, move files, and even more.",
+    Lien : '../pages/detailservice',
   },
 ];
 
@@ -71,7 +76,6 @@ export default function Services() {
         animate={controls}
         variants={containerVariants}
       >
-       
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
@@ -109,14 +113,15 @@ function FeatureCard({ feature }) {
       <p className="relative text-gray-600 mb-2 z-10 text-sm">
         {feature.description}
       </p>
-      <motion.a
-        href="#"
-        className="relative inline-flex items-center text-indigo-600 hover:text-indigo-800 z-10 text-sm"
-        whileHover={{ x: 5 }}
-        transition={{ type: "spring", stiffness: 400 }}
-      >
-        Voir plus <ArrowRight className="ml-2 w-3 h-3" />
-      </motion.a>
+      <Link href={feature.Lien} passHref>
+        <motion.a
+          className="relative inline-flex items-center text-indigo-600 hover:text-indigo-800 z-10 text-sm"
+          whileHover={{ x: 5 }}
+          transition={{ type: "spring", stiffness: 400 }}
+        >
+          Voir plus <ArrowRight className="ml-2 w-3 h-3" />
+        </motion.a>
+      </Link>
     </motion.div>
   );
 }
