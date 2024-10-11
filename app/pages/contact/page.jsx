@@ -10,6 +10,7 @@ import ContactForm from '@/app/components/Form'
 
 export default function Contact() {
   const [suggestion, setSuggestion] = useState('')
+  const [successMessage, setSuccessMessage] = useState('') // État pour l'alerte de succès
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -17,8 +18,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Suggestion submitted:', suggestion)
+    if (suggestion.trim() === '') {
+      alert('Le champ suggestion est requis')
+      return
+    }
+    // Affiche un message de succès et réinitialise le champ suggestion
+    setSuccessMessage('Votre suggestion a été envoyée avec succès !')
     setSuggestion('')
+
+    // Cache le message après quelques secondes
+    setTimeout(() => {
+      setSuccessMessage('')
+    }, 3000) // Le message disparaît après 3 secondes
   }
 
   const containerVariants = {
@@ -93,8 +104,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div>
-      </div>
       <motion.div variants={itemVariants} className="bg-yellow-200 p-6 rounded-lg shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex items-center justify-center">
@@ -112,7 +121,7 @@ export default function Contact() {
               Vous avez des suggestions à nous faire part ?
             </p>
             <p className="text-gray-600 mb-6">
-              Envoyez les nous e façon anonyme
+              Envoyez-les nous de façon anonyme
             </p>
             <form onSubmit={handleSubmit}>
               <textarea
@@ -131,6 +140,12 @@ export default function Contact() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </form>
+
+            {successMessage && (
+              <div className="mt-4 text-green-500 font-semibold">
+                {successMessage}
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

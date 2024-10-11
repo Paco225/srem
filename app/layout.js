@@ -12,8 +12,8 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <WhatsAppButton />
+    
+    <html lang="fr">
       <body className="bg-white">
         <Navbar />
         <Hero />
