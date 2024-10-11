@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Rice from '../public/Rice.png'
 
-// Liste JSON dynamique pour les sections
 const sections = [
   {
     title: 'BUSINESS LUNCH',
@@ -28,8 +27,47 @@ const sections = [
     image: Rice,
     bgColor: 'bg-blue-600',
   },
-
 ]
+
+const textAnimation = {
+  initial: { opacity: 0, y: 50, scale: 0.9 },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "faded",
+      stiffness: 120,
+      damping: 20,
+      duration: 1,
+    },
+  },
+}
+
+const MenuDuJour = () => {
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    setCurrentDate(today.toLocaleDateString('fr-FR', options));
+  }, []);
+
+  return (
+    <motion.div
+      variants={textAnimation}
+      initial="initial"
+      whileInView="whileInView"
+      viewport={{ once: true }}
+      className="max-w-4xl mx-auto text-center mt-8"
+    >
+      <h2 className="text-3xl font-bold mb-4">Menu du jour</h2>
+      <p className="text-lg text-gray-600 mb-6">
+        {currentDate}
+      </p>
+    </motion.div>
+  );
+};
 
 export default function BusinessLunch() {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,7 +77,9 @@ export default function BusinessLunch() {
   }, [])
 
   return (
-    <div className="flex flex-col my-6">
+    <div className="flex flex-col my-6  pt-6">
+      <MenuDuJour /> {/* Ajout du composant MenuDuJour ici */}
+      
       {sections.map((section, index) => (
         <motion.div
           key={index}

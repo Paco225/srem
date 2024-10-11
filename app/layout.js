@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <WhatsAppButton />
-      <body className="bg-gray-50">
+      <body className="bg-white">
         <Navbar />
         <Hero />
         {children}

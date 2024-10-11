@@ -15,9 +15,9 @@ export default function Home() {
     <>
        <BentoSection />
        <Service />
+       <BusinessLunch/>
        <TestimonialCarousel />
        <Partner />
-       <BusinessLunch/>
        <TourList />
        <Newsletter />
     </>
