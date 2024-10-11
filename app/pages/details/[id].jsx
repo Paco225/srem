@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import image from '../../public/weare.png'; // Importez votre image ou utilisez une URL
+import Image from 'next/image';
 
 const DetailPage = () => {
   const router = useRouter();
