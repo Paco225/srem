@@ -5,16 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import image from '../../public/weare.png'
 
-// Structure of a MediaItem:
-// {
-//   id: number,
-//   title: string,
-//   description: string,
-//   imageSrc: string,
-//   views: number,
-//   shares: number,
-//   rating: number
-// }
+
 
 const mediaItems = [
   {
@@ -82,7 +73,7 @@ const mediaItems = [
   }
 ]
 
-export default function Component() {
+export default function Realisation() {
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 3
   const totalPages = Math.ceil(mediaItems.length / itemsPerPage)
