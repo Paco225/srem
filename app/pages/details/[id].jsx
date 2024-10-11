@@ -1,13 +1,12 @@
 import { useRouter } from 'next/router';
-import image from '../../public/weare.png'; // Importez votre image ou utilisez une URL
+import image from '../../public/weare.png'; 
 import Image from 'next/image';
 import Link from 'next/link';
 
 const DetailPage = () => {
   const router = useRouter();
-  const { id } = router.query; // Récupérez l'ID du poste
+  const { id } = router.query;
 
-  // Remplacez ceci par votre logique pour obtenir les détails du poste
   const tourDetails = {
     1: {
       title: 'Nourissez vous bien !',
@@ -21,12 +20,12 @@ const DetailPage = () => {
       content: 'Détails sur cet autre événement...',
       image: image,
     },
-    // Ajoutez d'autres détails ici...
+    
   };
 
   const tour = tourDetails[id];
 
-  if (!tour) return <p>Chargement...</p>; // Gérez le cas où les détails ne sont pas encore chargés
+  if (!tour) return <p>Chargement...</p>; 
 
   return (
     <div className="container mx-auto px-4 py-8">
