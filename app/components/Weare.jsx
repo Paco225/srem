@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 const BentoSection = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2, // Animation déclenchée quand 20% de l'élément est visible
+    threshold: 0.2, 
   });
 
   useEffect(() => {
@@ -21,24 +21,23 @@ const BentoSection = () => {
   }, [controls, inView]);
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 50  },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.8,},
     },
   };
 
   return (
     <>
-      {/* Titre 'Qui sommes-nous' séparé de la section */}
       <motion.h1
-        className="text-4xl sm:text-4xl font-semibold text-center text-gray-800 mb-4 mt-12"
+        className="text-4xl sm:text-3xl font-semibold text-center text-gray-600 mb-4 mt-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.8,  }}
       >
-        Qui sommes-nous
+        Qui sommes-nous ?
       </motion.h1>
 
       <motion.section
@@ -50,12 +49,10 @@ const BentoSection = () => {
       >
         {/* Title Section */}
         <div className="mb-8 sm:mb-0 text-center sm:text-left max-w-lg">
-          <h2 className="text-4xl sm:text-6xl font-bold mb-6">
-            <span className="text-black">Lorem ipsum dolor sit </span>
-            <span className="text-red-500">amet</span>
-          </h2>
-          <p className="text-lg sm:text-2xl text-gray-600">
-            Lorem ipsum dolor sit amet ipsum lorem dolor ipsum amet sit lorem ipsum.
+            <span className="text-black font-bold text-3xl">SREM - votre partenaire de  </span>
+            <span className="text-[#fd053f] text-3xl ">confiance</span>
+          <p className="text-lg sm:text-[18px] text-gray-600 pt-4">
+          Chez SREM, nous comprenons les besoins uniques des travailleurs du secteur minier. C'est pourquoi nous proposons des solutions de restauration adaptées, offrant des repas sains, équilibrés et savoureux directement sur site. Nous garantissons une qualité exceptionnelle et un service rapide pour que vos équipes restent toujours performantes.
           </p>
         </div>
 

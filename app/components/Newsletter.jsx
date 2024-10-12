@@ -36,14 +36,13 @@ const Newsletter = () => {
           Prenez rendez-vous<span className="text-yellow-400 text-center"> avec nous</span>
         </h1>
         <p className="text-white mb-8 text-center">
-          Nous le rendons si simple que vous n’aurez pas besoin de vous embêter.
-        </p>
+        Inscrivez-vous à notre newsletter et découvrez nos services de restauration <br /> dédiés aux travailleurs miniers !        </p>
         
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center">
      
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Entrer votre email"
             className="px-4 py-3 w-full sm:w-auto sm:flex-grow-0 bg-white text-black focus:outline-none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -58,7 +57,7 @@ const Newsletter = () => {
         </form>
 
         {successMessage && (
-          <div className="mt-4 text-center text-green-500 font-semibold">
+          <div className="mt-6 bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
             {successMessage}
           </div>
         )}

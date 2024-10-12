@@ -8,20 +8,18 @@ import { useInView } from "react-intersection-observer";
 const features = [
   {
     icon: <ChartBar className="w-6 h-6 text-red-500" />,
-    title: "Analytics",
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
+    title: "Menus personnalisés",
+    description: 'Élaboration de menus adaptés aux besoins nutritionnels spécifiques des travailleurs pour maintenir leur santé et leur productivité.',
   },
   {
     icon: <Lock className="w-6 h-6 text-red-500" />,
-    title: "Security",
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
-
+    title: "Restauration sur site",
+    description: 'Des repas fraîchement préparés pour vos équipes, livrés directement sur site pour garantir un service rapide et efficace.',
   },
   {
     icon: <FileText className="w-6 h-6 text-red-500" />,
-    title: "Document Management",
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aperiam provident natus laudantium magni mollitia!',
-
+    title: "Gestion des installations",
+    description: 'Gestion complète des installations de restauration en camp minier, incluant la logistique et la coordination avec les équipes sur place.',
   },
 ];
 
@@ -51,7 +49,7 @@ const itemVariants = {
 export default function Service() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2, // Animation trigger quand 20% du composant est visible
+    threshold: 0.5, 
   });
 
   useEffect(() => {

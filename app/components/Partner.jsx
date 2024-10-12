@@ -70,9 +70,9 @@ export default function OurCustomers() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-3xl font-bold mb-4">Nos Partenaires</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">Nos Partenaires</h2>
         <p className="text-lg text-gray-600 mb-8">
-          Ils nous ont fais confiance et on été satisfait
+          Ils nous ont fais confiance et on été satisfaits
         </p>
       </motion.div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto bg-white">

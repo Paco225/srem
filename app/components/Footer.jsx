@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaFacebook } from "react-icons/fa";
+import { LinkedinIcon } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -41,7 +43,7 @@ export default function Footer() {
       animate={inView ? "visible" : "hidden"}
       className="bg-gray-100 text-gray-900 py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <motion.div
           variants={itemVariants}
           className="col-span-1 md:col-span-3 lg:col-span-1"
@@ -98,6 +100,20 @@ export default function Footer() {
           <p>srem@gmail.com</p>
           <p>Cote d'ivoire, Abidjan</p>
         </motion.div>
+
+        <motion.div variants={itemVariants} className="col-span-1 md:col-span-3 lg:col-span-1">
+          <h3 className="text-[16px] font-bold mb-4">Nos réseaux</h3>
+          <div className="flex ">
+            <a href="#" className="mr-4">
+              <FaFacebook size={20} color="#fd053f"/>
+            </a>
+            <a href="#">
+              <LinkedinIcon size={20}  color="#fd053f" />
+            </a>
+          </div>
+     
+        </motion.div>
+        
       </div>
 
       <motion.div

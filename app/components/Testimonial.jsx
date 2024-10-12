@@ -9,19 +9,19 @@ const testimonials = [
     id: 1,
     name: 'Pacome Brou',
     location: 'Data analyst Orange Bank',
-    text: 'lorem ipsum dolor sit amet. Además fueron muy amables, pedimos una cama supletoria y nos la facilitaron sin problemas.',
+    text: 'Le service de restauration de SREM est impeccable. Non seulement les repas sont délicieux, mais ils sont également adaptés aux besoins énergétiques de notre équipe.',
   },
   {
     id: 2,
     name: 'Moise YAPO',
     location: 'CEO Agence MOSES ART',
-    text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, error amet ex asperiores magni reprehenderit illum et quaerat sequi natus?',
+    text: 'Le service de restauration de SREM est impeccable. Non seulement les repas sont délicieux, mais ils sont également adaptés aux besoins énergétiques de notre équipe.',
   },
   {
     id: 3,
     name: 'Yves NIAMBA',
     location: 'Production Manager',
-    text: 'lorem psum dolor ispsd j. We couldn\'t have asked for a better experience. Highly recommended!',
+    text: 'Le service de restauration de SREM est impeccable. Non seulement les repas sont délicieux, mais ils sont également adaptés aux besoins énergétiques de notre équipe.',
   },
 ]
 
@@ -46,7 +46,7 @@ export default function TestimonialCarousel() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12 ">
-      <h2 className="text-3xl font-bold text-center mb-8">Ce qu'ils pensent de nous</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 text-gray-700">Ce qu'ils pensent de nous</h2>
       <div className="relative">
         <AnimatePresence mode="wait">
           <motion.div

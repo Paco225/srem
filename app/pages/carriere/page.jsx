@@ -9,11 +9,10 @@ import contact from '../../public/contact.png'
 const Carriere = () => {
   return (
     <div>
-          <HeroBanner title="Carrière" imageUrl={contact} />
-
-      <Career/> 
-      <Offer/> 
-    </div>    
+      <HeroBanner title="Carrière" imageUrl={contact} />
+      <Career />
+      <Offer />
+    </div>
   )
 }
 

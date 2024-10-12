@@ -1,7 +1,7 @@
 'use client'
 import Navbar from "./components/Navbar";
 import BentoSection from "./components/Weare";
-import Service from "./components/Service";
+import Services from "./components/Services";
 import TestimonialCarousel from "./components/Testimonial";
 import Partner from "./components/Partner";
 import Newsletter from "./components/Newsletter";
@@ -15,7 +15,7 @@ export default function Home() {
     <>
     <Hero/>
        <BentoSection />
-       <Service />
+       <Services />
        <BusinessLunch/>
        <TestimonialCarousel />
        <Partner />
