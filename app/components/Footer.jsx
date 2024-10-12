@@ -54,7 +54,7 @@ export default function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Adresse Email"
-              className="flex-grow bg-gray-100 text-gray-900 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#fd053f]"
+              className="flex-grow bg-white border-gray-200 border-2 text-gray-900 px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#fd053f]"
               required
             />
             <button
