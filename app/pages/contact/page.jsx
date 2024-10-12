@@ -7,6 +7,8 @@ import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import imag from '../../public/weare.png'
 import ContactForm from '@/app/components/Form'
+import HeroBanner from '@/app/components/HeroBanner'
+import contact from '../../public/contact.png'
 
 export default function Contact() {
   const [suggestion, setSuggestion] = useState('')
@@ -50,7 +52,14 @@ export default function Contact() {
   }
 
   return (
-    <motion.section
+    <>
+    <div>
+      <HeroBanner
+        title="Contactez-nous"
+        imageUrl={contact}
+      />
+    </div>
+     <motion.section
       ref={ref}
       variants={containerVariants}
       initial="hidden"
@@ -151,5 +160,7 @@ export default function Contact() {
       </motion.div>
       <ContactForm />
     </motion.section>
+    </>
+   
   )
 }

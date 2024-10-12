@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import image from '../../public/weare.png'
+import HeroBanner from '@/app/components/HeroBanner'
+import contact from '../../public/contact.png'
 
 
 
@@ -112,7 +114,9 @@ export default function Realisation() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
+     <HeroBanner title="Nos réalisations" imageUrl={contact} />
+     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-12">Nos réalisations</h1>
       <AnimatePresence mode="wait">
         <motion.div
@@ -161,5 +165,7 @@ export default function Realisation() {
         ))}
       </div>
     </div>
+    </>
+   
   )
 }
