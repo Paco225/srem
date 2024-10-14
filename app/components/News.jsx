@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const TourCard = ({ tour }) => {
   return (
-    <Link href={`/pages/details/${tour.id}`} passHref>
+    <Link href={`/pages/actualite`} passHref>
       <motion.div
         className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
         whileHover={{ scale: 1.05 }}
@@ -46,7 +46,7 @@ const TourCard = ({ tour }) => {
 const TourList = () => {
   const tours = [
     {
-      id: 1, // Ajoutez un identifiant unique pour chaque tour
+      id: 1, 
       title: 'Nourissez vous bien !',
       date: 'Samedi 12 mai 2024',
       image: image,
