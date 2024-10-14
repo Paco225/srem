@@ -72,22 +72,22 @@ export default function Footer() {
           <h3 className="text-[16px] font-bold mb-4">Liens utiles</h3>
           <ul className="space-y-2 text-center">
             <li>
-              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+              <a href="pages/presentation" className="hover:text-[#fd053f] transition duration-300">
                 Présentation
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+              <a href="pages/services" className="hover:text-[#fd053f] transition duration-300">
                 Services
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-[#fd053f] transition duration-300">
+              <a href="pages/realisation" className="hover:text-[#fd053f] transition duration-300">
                 Réalisation
               </a>
             </li>
             <li>
-              <a href="#" className=" hover:text-[#fd053f] transition duration-300">
+              <a href="pages/carriere" className=" hover:text-[#fd053f] transition duration-300">
                 Carrière
               </a>
             </li>

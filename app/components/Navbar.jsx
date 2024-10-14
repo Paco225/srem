@@ -77,7 +77,7 @@ export default function SimpleModernHeader() {
                 whileHover="hover"
                 animate="rest"
                 variants={linkHoverVariants}
-                className="relative"
+                className="relative "
               >
                 <Link                
                  scroll={true}
@@ -119,7 +119,7 @@ export default function SimpleModernHeader() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-6 w-6 " /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>

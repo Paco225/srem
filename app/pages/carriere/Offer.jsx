@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-
+import { useInView } from "react-intersection-observer"
 
 const jobListings = [
   { title: "Senior backend developper", location: "Abidjan", link: "../pages/offre" },
@@ -15,23 +15,47 @@ const jobListings = [
 ]
 
 export default function JobListings() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
     <>
-     <div className="container mx-auto px-4 mb-14 bg-gray-100 py-8 ">
-      <h1 className="text-3xl font-bold mb-8 text-center">Decouvrez nos offres</h1>
+     <motion.div 
+       ref={ref}
+       variants={containerVariants}
+       initial="hidden"
+       animate={inView ? "visible" : "hidden"}
+       className="container mx-auto px-4 mb-14 bg-gray-100 py-8"
+     >
+      <motion.h1 variants={itemVariants} className="text-3xl font-bold mb-8 text-center">Découvrez nos offres</motion.h1>
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={containerVariants}
       >
         {jobListings.map((job, index) => (
           <motion.div
             key={index}
             className="bg-white rounded-lg shadow-xl mx-4 my-4 p-6 flex flex-col justify-between border-t-4 border-[#fd053f]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            variants={itemVariants}
             whileHover={{ scale: 1.05 }}
           >
             <div>
@@ -66,17 +90,14 @@ export default function JobListings() {
       </motion.div>
       <motion.div
         className="mt-8 flex justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
+        variants={itemVariants}
       >
         <Link href="/" className="bg-pink-200 text-pink-600 px-6 py-2 rounded-full font-semibold flex items-center hover:bg-pink-300 transition-colors">
           Voir plus
           <ArrowRight className="ml-2" size={20} />
         </Link>
       </motion.div>
-    </div>
+    </motion.div>
     </>
-   
   )
 }

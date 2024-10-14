@@ -12,64 +12,64 @@ import contact from '../../public/contact.png'
 const mediaItems = [
   {
     id: 1,
-    title: "Behind The Wall",
-    description: "Dolor tempor, sit. Velit veniam dicta aliquid blanditiis, ullam quibusdam accusamus, eum quis molestiae nihil tempora fuga cum praesentium, in consequatur eius repellat. Velit veniam dicta aliquid blanditiis ullam quibusdam.",
+    title: "Projet minier Tongon",
+    description: "SREM a fourni des services de restauration complets pour le site minier de Tongon, assurant des repas nutritifs et variés pour plus de 1000 travailleurs quotidiennement. Notre gestion efficace de la cantine a contribué à améliorer la satisfaction et la productivité des employés sur le site.",
     imageSrc: image,
 
   },
   {
     id: 2,
-    title: "City Lights",
-    description: "Amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio.",
+    title: "Cantine mobile pour Endeavour Mining",
+    description: "Nous avons conçu et mis en place une solution de cantine mobile innovante pour Endeavour Mining, permettant de servir des repas de qualité sur des sites d'exploration éloignés. Cette approche flexible a permis d'optimiser les opérations tout en maintenant des standards élevés de sécurité alimentaire.",
     imageSrc: image,
 
   },
   {
     id: 3,
-    title: "Relationship Status: Online",
-    description: "Dolor tempor, sit. Velit veniam dicta aliquid blanditiis, ullam quibusdam accusamus, eum quis molestiae nihil tempora fuga cum praesentium, in consequatur eius repellat. Velit veniam dicta aliquid blanditiis ullam quibusdam.",
+    title: "Gestion alimentaire pour Randgold Resources",
+    description: "SREM a pris en charge la gestion complète des services alimentaires pour Randgold Resources, incluant l'approvisionnement, la préparation et le service de repas pour plusieurs sites. Notre expertise a permis de réduire les coûts tout en améliorant la qualité et la diversité des menus proposés.",
     imageSrc: image,
 
   },
   {
     id: 4,
-    title: "Beside The Road",
-    description: "Dolor tempor, sit. Velit veniam dicta aliquid blanditiis, ullam quibusdam accusamus, eum quis molestiae nihil tempora fuga cum praesentium, in consequatur eius repellat. Velit veniam dicta aliquid blanditiis ullam quibusdam.",
+    title: "Programme nutritionnel pour Newcrest Mining",
+    description: "En collaboration avec Newcrest Mining, nous avons développé un programme nutritionnel sur mesure pour leurs employés, intégrant des options de repas équilibrés et adaptés aux besoins énergétiques spécifiques des travailleurs miniers. Ce programme a contribué à améliorer la santé et le bien-être général du personnel.",
     imageSrc: image,
 
   },
   {
     id: 5,
-    title: "Mountain View",
-    description: "Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.",
+    title: "Logistique alimentaire pour AngloGold Ashanti",
+    description: "SREM a optimisé la chaîne d'approvisionnement alimentaire pour AngloGold Ashanti, mettant en place un système logistique efficace pour approvisionner plusieurs sites miniers isolés. Cette solution a permis de réduire les délais de livraison et d'assurer une fraîcheur constante des produits.",
     imageSrc: image,
 
   },
   {
     id: 6,
-    title: "Ocean Breeze",
-    description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
+    title: "Formation HACCP pour Perseus Mining",
+    description: "Nous avons conçu et dispensé un programme de formation HACCP (Hazard Analysis Critical Control Point) complet pour le personnel de cuisine de Perseus Mining. Cette initiative a renforcé les pratiques d'hygiène et de sécurité alimentaire sur l'ensemble de leurs sites d'exploitation.",
     imageSrc: image,
 
   },
   {
     id: 7,
-    title: "Urban Jungle",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.",
+    title: "Événements corporatifs pour Barrick Gold",
+    description: "SREM a organisé et géré avec succès une série d'événements corporatifs pour Barrick Gold, incluant des dîners de gala et des réceptions pour les investisseurs. Notre expertise en restauration haut de gamme a permis de créer des expériences culinaires mémorables, renforçant l'image de marque de l'entreprise.",
     imageSrc: image,
 
   },
   {
     id: 8,
-    title: "Sunset Boulevard",
-    description: "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis.",
+    title: "Optimisation des menus pour Resolute Mining",
+    description: "En collaboration avec Resolute Mining, nous avons mené une refonte complète des menus de leurs cantines, intégrant des options plus saines et culturellement diversifiées. Cette initiative a significativement augmenté la satisfaction des employés et réduit le gaspillage alimentaire.",
     imageSrc: image,
 
   },
   {
     id: 9,
-    title: "Starry Night",
-    description: "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
+    title: "Gestion durable pour Gold Fields",
+    description: "Pour Gold Fields, SREM a mis en place un programme de gestion alimentaire durable, privilégiant les fournisseurs locaux et réduisant l'empreinte environnementale des opérations de restauration. Ce projet a non seulement amélioré la durabilité, mais a aussi renforcé les relations avec les communautés locales.",
     imageSrc: image,
 
   }
@@ -85,13 +85,13 @@ export default function Realisation() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.8
       }
     }
   }
 
   const itemVariants = {
-    hidden: { x: -70, opacity: 0 },
+    hidden: { x: -80, opacity: 0 },
     visible: { 
       x: 0, 
       opacity: 1,

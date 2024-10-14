@@ -66,13 +66,12 @@ export default function Contact() {
       animate={inView ? "visible" : "hidden"}
       className="bg-white py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto items-center">
-        <motion.div variants={itemVariants} className="mb-12">
+      <div className="max-w-7xl mx-auto items-center mt-6">
+        <motion.div variants={itemVariants} className="flex flex-col items-center justify-center text-center mb-20">
           <span className="inline-block bg-pink-100 rounded-full px-4 py-2 text-pink-600 font-semibold text-sm mb-4">
             Contactez nous
           </span>
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Prenez contact avec nous
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-3xl">
           </h2>
         </motion.div>
 
@@ -113,7 +112,8 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <motion.div variants={itemVariants} className="bg-yellow-200 p-6 rounded-lg shadow-sm">
+
+      <motion.div variants={itemVariants} className="bg-gray-200 p-6 my-16 rounded-lg shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex items-center justify-center">
             <Image
@@ -124,8 +124,8 @@ export default function Contact() {
               className="rounded-lg"
             />
           </div>
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Boîte à suggestion</h3>
+          <div >
+            <h3 className="text-2xl font-bold text-gray-900">Boîte à suggestion</h3>
             <p className="text-gray-600 mb-4">
               Vous avez des suggestions à nous faire part ?
             </p>
@@ -136,24 +136,26 @@ export default function Contact() {
               <textarea
                 value={suggestion}
                 onChange={(e) => setSuggestion(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md mb-4"
+                className="w-full p-2 border border-gray-300 rounded-md mb-4 outline-none"
                 rows={4}
                 placeholder="Votre suggestion ici..."
                 required
               />
+
               <button
                 type="submit"
-                className="bg-yellow-400 text-white px-6 py-2 rounded-full font-semibold flex items-center justify-center hover:bg-yellow-500 transition duration-300"
+                className="bg-yellow-400 text-white px-6 py-2 rounded-md font-semibold flex items-center justify-center hover:bg-yellow-500 transition duration-300"
               >
+
                 Envoyer
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </form>
 
             {successMessage && (
-              <div className="mt-4 text-green-500 font-semibold">
-                {successMessage}
-              </div>
+                <div className="mt-4 text-green-500 font-semibold">
+                  {successMessage}
+                </div>
             )}
           </div>
         </div>
