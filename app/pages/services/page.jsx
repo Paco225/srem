@@ -1,5 +1,5 @@
 import React from 'react'
-import Services from '@/app/components/Services'
+import Service from '@/app/components/Service'
 import ServicesSection from '@/app/components/Titreservice'
 import OurCustomers from '@/app/components/Partner'
 import ContactForm from '@/app/components/Form'
@@ -10,13 +10,12 @@ import image from '../../public/exposant.jpg'
 const page = () => {
   return (
     <>
-     <HeroBanner imageUrl={image} />  {/* Hero banner */}
-      <ServicesSection  />
-     <Services /> 
+      <HeroBanner imageUrl={image} />  {/* Hero banner */}
+      <ServicesSection />
+      <Service />
       <OurCustomers />
-      <ContactForm /> 
+      <ContactForm />
     </>
   )
 }
-
 export default page

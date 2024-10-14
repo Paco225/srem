@@ -10,16 +10,22 @@ const features = [
     icon: <ChartBar className="w-6 h-6 text-red-500" />,
     title: "Menus personnalisés",
     description: 'Élaboration de menus adaptés aux besoins nutritionnels spécifiques des travailleurs pour maintenir leur santé et leur productivité.',
+    Lien: '../pages/detailservice',
+
   },
   {
     icon: <Lock className="w-6 h-6 text-red-500" />,
     title: "Restauration sur site",
     description: 'Des repas fraîchement préparés pour vos équipes, livrés directement sur site pour garantir un service rapide et efficace.',
+    Lien: '../pages/detailservice',
+
   },
   {
     icon: <FileText className="w-6 h-6 text-red-500" />,
     title: "Gestion des installations",
     description: 'Gestion complète des installations de restauration en camp minier, incluant la logistique et la coordination avec les équipes sur place.',
+    Lien: '../pages/detailservice',
+
   },
 ];
 
@@ -49,7 +55,7 @@ const itemVariants = {
 export default function Service() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.5, 
+    threshold: 0.5,
   });
 
   useEffect(() => {
@@ -113,7 +119,7 @@ function FeatureCard({ feature }) {
         {feature.description}
       </p>
       <motion.a
-        href="#"
+        href={feature.Lien}
         className="relative inline-flex items-center text-indigo-600 hover:text-indigo-800 z-10 text-sm"
         whileHover={{ x: 5 }}
         transition={{ type: "spring", stiffness: 400 }}
