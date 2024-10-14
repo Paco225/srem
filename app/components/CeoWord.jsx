@@ -12,7 +12,7 @@ export default function CeoWord() {
   })
 
   return (
-    <div className="bg-gray-200  container mx-auto px-16 py-16" ref={ref}>
+    <div className="bg-gray-200  container mx-auto px-16 py-16 mb-20" ref={ref}>
       <div className="flex flex-col md:flex-row items-center justify-between">
         <motion.div 
           className="w-full md:w-1/2 mb-8 md:mb-0"
@@ -20,15 +20,15 @@ export default function CeoWord() {
           animate={inView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold mb-4">Lorem Ipsum</h2>
+          <h2 className="text-3xl font-bold mb-4">Message du Directeur Général</h2>
           <p className="mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Chez SREM, notre mission est de fournir des services de restauration exceptionnels aux sites miniers, en mettant l'accent sur la qualité, la sécurité et l'efficacité.
           </p>
           <p className="mb-4">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Notre équipe dévouée travaille sans relâche pour assurer que chaque repas servi répond aux plus hauts standards nutritionnels et gustatifs, tout en s'adaptant aux contraintes uniques de l'environnement minier.
           </p>
           <p className="mb-4">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Nous sommes fiers de contribuer au bien-être des travailleurs miniers et nous nous engageons à innover constamment pour améliorer nos services et soutenir le développement durable de l'industrie minière.
           </p>
         </motion.div>
         <motion.div 
@@ -39,7 +39,7 @@ export default function CeoWord() {
         >
           <Image
             src= {image}
-            alt="Profile Image"
+            alt="Photo du Directeur Général"
             width={500}
             height={600}
             className="rounded-lg shadow-lg"

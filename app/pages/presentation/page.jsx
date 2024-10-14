@@ -8,8 +8,9 @@ const page = () => {
   return (
     <>
     <HeroBanner imageUrl={weare} />  
-    <CeoWord />
     <Component />
+    <CeoWord />
+
     </>
   )
 }

@@ -10,7 +10,7 @@ import image from '../../public/exposant.jpg'
 const page = () => {
   return (
     <>
-      <HeroBanner imageUrl={image} />  {/* Hero banner */}
+      <HeroBanner imageUrl={image} /> 
       <ServicesSection />
       <Service />
       <OurCustomers />
