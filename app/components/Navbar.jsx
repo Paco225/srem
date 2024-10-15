@@ -68,7 +68,7 @@ export default function SimpleModernHeader() {
           <nav
             className={`${
               isMenuOpen ? 'flex' : 'hidden'
-            } absolute left-0 right-0 top-16 flex-col items-center space-y-4 p-4 shadow-md md:static md:flex md:flex-row md:space-x-6 md:space-y-0 md:p-0 md:shadow-none text-[15px] text-gray-800`}
+            } absolute left-0 right-0 top-16 flex-col items-center space-y-4 p-4 shadow-md bg-white md:static md:flex md:flex-row md:space-x-6 md:space-y-0 md:p-0 md:shadow-none text-[15px] text-gray-800`}
           >
             {['Accueil', 'Presentation', 'Services', 'Realisation', 'Carriere','Secteur'].map((item) => (
               <motion.div
@@ -93,16 +93,33 @@ export default function SimpleModernHeader() {
                 />
               </motion.div>
             ))}
-          </nav>
-
-          <div className="flex items-center space-x-4">
-            <Link href="../pages/contact">
+            <Link href="../pages/contact" className="md:hidden">
               <motion.button
                 initial="rest"
                 whileHover="hover"
                 animate="rest"
                 variants={buttonHoverVariants}
-                className="hidden md:inline-flex px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 via-red-500 to-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 relative overflow-hidden"
+                className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 via-red-500 to-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 relative overflow-hidden"
+              >
+                <span className="relative z-10">Contactez nous</span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 opacity-30"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 0.5 }}
+                  transition={{ duration: 0.4, ease: 'easeInOut' }}
+                />
+              </motion.button>
+            </Link>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <Link href="../pages/contact" className="hidden md:block">
+              <motion.button
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                variants={buttonHoverVariants}
+                className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-red-500 via-red-500 to-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 relative overflow-hidden"
               >
                 <span className="relative z-10">Contactez nous</span>
                 <motion.div
