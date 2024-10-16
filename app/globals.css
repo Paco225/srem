@@ -8,6 +8,10 @@
   scroll-behavior: smooth; 
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @keyframes zoom {
   0% {
     transform: scale(1);

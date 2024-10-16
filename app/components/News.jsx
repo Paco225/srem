@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const TourCard = ({ tour }) => {
   return (
-    <Link href={`/pages/actualite`} passHref>
+    <Link href={`/pages/detailblog`} passHref>
       <motion.div
         className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
         whileHover={{ scale: 1.05 }}

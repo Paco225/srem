@@ -92,10 +92,7 @@ export default function JobListings() {
         className="mt-8 flex justify-center"
         variants={itemVariants}
       >
-        <Link href="/" className="bg-pink-200 text-pink-600 px-6 py-2 rounded-full font-semibold flex items-center hover:bg-pink-300 transition-colors">
-          Voir plus
-          <ArrowRight className="ml-2" size={20} />
-        </Link>
+
       </motion.div>
     </motion.div>
     </>

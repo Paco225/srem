@@ -43,7 +43,7 @@ export default function Footer() {
       animate={inView ? "visible" : "hidden"}
       className="bg-gray-100 text-gray-900 py-8 sm:py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9">
         <motion.div
           variants={itemVariants}
           className="col-span-1 sm:col-span-2 lg:col-span-1"
@@ -68,7 +68,7 @@ export default function Footer() {
           </form>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center sm:items-start">
+        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center  pl-10">
           <h3 className="text-lg font-bold mb-4">Liens utiles</h3>
           <ul className="space-y-2 text-center sm:text-left">
             <li>
