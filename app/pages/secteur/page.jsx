@@ -13,13 +13,16 @@ const secteur = [
     id : 1,
     title: 'Business Management',
     icon: Cog,
-    image: image
+    image: image,
+    lien : '../pages/secteurun',
   },
   {
     id : 2,
     title: 'Research & Development',
     icon: Code,
-    image: image
+    image: image,
+    lien : '../pages/secteurdeux',
+
   }
 ]
 
@@ -44,7 +47,7 @@ export default function BusinessAgency() {
     <div className="flex justify-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
         {secteur.map((secteur, index) => (
-          <Link href={`../pages/secteurdetails/${secteur.id}`} key={index} passHref>
+          <Link href={secteur.lien} key={index} passHref>
             <div 
               className="flex flex-col items-center cursor-pointer"
               onMouseEnter={() => setHoveredIndex(index)}

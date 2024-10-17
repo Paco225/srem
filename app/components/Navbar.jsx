@@ -51,7 +51,7 @@ export default function SimpleModernHeader() {
     },
   };
   return (
-    <header className={`sticky top-0 z-50 w-full bg-white md:bg-transparent shadow-lg items-center transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-white/80' : ''}`}>
+    <header className={`sticky top-0 z-50 w-full bg-white  shadow-lg items-center transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-white/80' : ''}`}>
       <div className="container mx-auto px-4 items-center">
         <div className="flex h-16 items-center justify-between">
           <Link
