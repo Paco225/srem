@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import weare from '../public/weare.png'
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 export default function Component() {
   const [isMounted, setIsMounted] = useState(false)
@@ -12,9 +14,25 @@ export default function Component() {
     setIsMounted(true)
   }, [])
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 })
+
   return (
     <div className="bg-white text-gray-900 p-6 md:p-12">
-      <section className="mb-20 mt-4">
+      <motion.section 
+        ref={ref1}
+        initial="hidden"
+        animate={inView1 ? "visible" : "hidden"}
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+        className="mb-20 mt-4"
+      >
         <h2 className="text-lg uppercase mb-2 text-[#fd053f]">A propos de nous </h2>
         <div className="grid md:grid-cols-2 gap-14">
           <div className='w-[85%]'>
@@ -52,8 +70,15 @@ export default function Component() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="grid md:grid-cols-2 gap-14 items-center mb-24">
+      </motion.section>
+      <motion.section 
+        ref={ref2}
+        initial="hidden"
+        animate={inView2 ? "visible" : "hidden"}
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+        className="grid md:grid-cols-2 gap-14 items-center mb-24"
+      >
         <div className="relative">
           <div className="absolute inset-0 bg-yellow-300 rounded-lg transform translate-x-2 translate-y-2 "></div>
           <div className="relative z-10 rounded-lg overflow-hidden">
@@ -78,8 +103,15 @@ export default function Component() {
           </p>
           <div className="h-1 w-12 bg-[#fd053f]"></div>
         </div>
-      </section>
-      <section className="bg-gray-900 text-white p-8 mb-6 md:p-12 rounded-[18px]">
+      </motion.section>
+      <motion.section 
+        ref={ref3}
+        initial="hidden"
+        animate={inView3 ? "visible" : "hidden"}
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+        className="bg-gray-900 text-white p-8 mb-6 md:p-12 rounded-[18px]"
+      >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -120,7 +152,7 @@ export default function Component() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
     </div>
   )
 }

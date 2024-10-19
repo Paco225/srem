@@ -60,9 +60,11 @@ export default function SimpleModernHeader() {
             <Image
               src={logo}
               alt="Logo"
-              width={40}
-              height={40}
+              width={96}
+              height={96}
               className="w-24"
+              quality={100}
+              priority
             />
           </Link>
           <nav

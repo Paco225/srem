@@ -16,9 +16,9 @@ export default function Detailservice() {
       <div className="text-center mb-12">
         <h1 className='text-4xl font-bold text-gray-800'>Nos Services</h1>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 rounded-lg shadow-md overflow-hidden">
+      <div className="flex flex-col md:flex-row items-center justify-between px-6 bg-gray-100 rounded-lg shadow-md overflow-hidden">
         <motion.div 
-          className="w-full md:w-1/2 p-8"
+          className="w-full md:w-1/2 p-8 "
           initial={{ x: -100, opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8 }}

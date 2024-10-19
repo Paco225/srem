@@ -7,7 +7,7 @@ import weare from '../../public/weare.png'
 const page = () => {
   return (
     <>
-    <HeroBanner imageUrl={weare} />  
+    <HeroBanner imageUrl={weare} title="Présentation" />  
     <Component />
     <CeoWord />
 

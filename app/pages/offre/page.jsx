@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Postuler from "@/app/components/Postuler"
@@ -9,6 +10,13 @@ export default function Offre() {
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const [formSubmitted, setFormSubmitted] = useState(false)
+
+  const handleFormSubmit = (formData) => {
+    console.log("Informations soumises :", formData)
+    setFormSubmitted(true)
+  }
 
   return (
     <>
@@ -46,7 +54,17 @@ export default function Offre() {
        
     </motion.div>
     <div className="mx-[10%] mb-14 mt-4">
-    <Postuler />
+      <Postuler onSubmit={handleFormSubmit} />
+      {formSubmitted && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mt-4 p-4 bg-green-100 text-green-700 rounded-md"
+        >
+          Votre candidature a été soumise avec succès !
+        </motion.div>
+      )}
     </div>
     </>
   )

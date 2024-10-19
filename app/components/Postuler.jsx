@@ -31,15 +31,47 @@ const Label = ({ children, className, ...props }) => (
 export default function Postuler() {
   const [isOpen, setIsOpen] = useState(false)
   const [fileName, setFileName] = useState('')
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    cv: null
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const fileInputRef = useRef(null)
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      cv: null
+    })
+    setFileName('')
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ''
+    }
+  }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }))
+  }
 
   const handleFileChange = (event) => {
     const file = event.target.files?.[0]
     if (file) {
       if (file.type === 'application/pdf') {
         setFileName(file.name)
+        setFormData(prevData => ({
+          ...prevData,
+          cv: file
+        }))
       } else {
-        alert('Please upload a PDF file')
+        alert('Veuillez télécharger un fichier PDF')
         if (fileInputRef.current) {
           fileInputRef.current.value = ''
         }
@@ -51,11 +83,27 @@ export default function Postuler() {
     fileInputRef.current?.click()
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (formData.name && formData.email && formData.phone && formData.cv) {
+      console.log('Données du formulaire soumises :', formData)
+      setIsSubmitted(true)
+      resetForm()
+      // Ici, vous pouvez ajouter la logique pour envoyer les données au serveur
+    } else {
+      alert('Veuillez remplir tous les champs du formulaire')
+    }
+  }
+
   return (
     <div>
       <Button 
         className="bg-[#FD053F] text-white hover:bg-red-500 w-full"
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(true)
+          setIsSubmitted(false)
+          resetForm()
+        }}
       >
         Postuler
       </Button>
@@ -70,43 +118,50 @@ export default function Postuler() {
               <X size={24} />
             </button>
             <h2 className="text-lg font-semibold mb-4">Formulaire candidat</h2>
-            <form className="space-y-4">
-              <div>
-                <Label htmlFor="name">Nom & prenoms</Label>
-                <Input id="name" />
+            {isSubmitted ? (
+              <div className="text-green-600 font-semibold">
+                Votre candidature a été soumise avec succès !
               </div>
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" />
-              </div>
-              <div>
-                <Label htmlFor="phone">Telephone</Label>
-                <Input id="phone" type="tel" />
-              </div>
-              <div>
-                <input
-                  type="file"
-                  accept=".pdf"
-                  className="hidden"
-                  ref={fileInputRef}
-                  onChange={handleFileChange}
-                />
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <Label htmlFor="name">Nom & prénoms</Label>
+                  <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required />
+                </div>
+                <div>
+                  <Label htmlFor="phone">Téléphone</Label>
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} required />
+                </div>
+                <div>
+                  <input
+                    type="file"
+                    accept=".pdf"
+                    className="hidden"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    required
+                  />
+                  <Button 
+                    type="button" 
+                    className="w-full bg-white border border-gray-300 hover:bg-gray-50"
+                    onClick={handleUploadClick}
+                  >
+                    <Upload className="inline-block mr-2 h-4 w-4" />
+                    {fileName ? fileName : 'Upload ton CV'}
+                  </Button>
+                </div>
                 <Button 
-                  type="button" 
-                  className="w-full bg-white border border-gray-300 hover:bg-gray-50"
-                  onClick={handleUploadClick}
+                  type="submit" 
+                  className="w-full bg-[#FD053F] text-white hover:bg-red-700"
                 >
-                  <Upload className="inline-block mr-2 h-4 w-4" />
-                  {fileName ? fileName : 'Upload ton CV'}
+                  Envoyer
                 </Button>
-              </div>
-              <Button 
-                type="submit" 
-                className="w-full bg-[#FD053F] text-white hover:bg-red-700"
-              >
-                Envoyer
-              </Button>
-            </form>
+              </form>
+            )}
           </div>
         </div>
       )}

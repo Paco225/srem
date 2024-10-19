@@ -46,11 +46,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-9">
         <motion.div
           variants={itemVariants}
-          className="col-span-1 sm:col-span-2 lg:col-span-1"
+          className="col-span-1 sm:col-span-2 lg:col-span-1 flex flex-col items-center sm:items-start"
         >
-          <h2 className="text-xl sm:text-2xl font-bold mb-2">Soyez prêt</h2>
-          <p className="mb-4 text-sm sm:text-base">Recevez des mises à jour exclusives directement dans votre boîte de réception.</p>
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center sm:text-left">Soyez prêt</h2>
+          <p className="mb-4 text-sm sm:text-base text-center sm:text-left">Recevez des mises à jour exclusives directement dans votre boîte de réception.</p>
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full max-w-xs sm:max-w-none">
             <input
               type="email"
               value={email}
@@ -68,7 +68,7 @@ export default function Footer() {
           </form>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center  pl-10">
+        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center ml-8 sm:items-start">
           <h3 className="text-lg font-bold mb-4">Liens utiles</h3>
           <ul className="space-y-2 text-center sm:text-left">
             <li>
@@ -94,14 +94,14 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="col-span-1">
+        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center sm:items-start">
           <h3 className="text-lg font-bold mb-4">Contactez nous</h3>
-          <p className="text-sm sm:text-base">22 06 789 000</p>
-          <p className="text-sm sm:text-base">srem@gmail.com</p>
-          <p className="text-sm sm:text-base">Cote d'ivoire, Abidjan</p>
+          <p className="text-sm sm:text-base text-center sm:text-left">22 06 789 000</p>
+          <p className="text-sm sm:text-base text-center sm:text-left">srem@gmail.com</p>
+          <p className="text-sm sm:text-base text-center sm:text-left">Cote d'ivoire, Abidjan</p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="col-span-1">
+        <motion.div variants={itemVariants} className="col-span-1 flex flex-col items-center sm:items-start">
           <h3 className="text-lg font-bold mb-4">Nos réseaux</h3>
           <div className="flex justify-center sm:justify-start">
             <a href="#" className="mr-4">
