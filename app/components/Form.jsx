@@ -1,30 +1,43 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ContactForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [alertVisible, setAlertVisible] = useState(false) // état pour afficher l'alerte
+  const [alertVisible, setAlertVisible] = useState(false)
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
+  const [captchaToken, setCaptchaToken] = useState(null)
+  const recaptchaRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', { name, email, message })
+    if (!captchaToken) {
+      alert('Veuillez valider le reCAPTCHA')
+      return
+    }
+    console.log('Form submitted:', { name, email, message, captchaToken })
     setName('')
     setEmail('')
     setMessage('')
-    setAlertVisible(true) // afficher l'alerte après la soumission
+    setAlertVisible(true)
+    recaptchaRef.current.reset()
+    setCaptchaToken(null)
 
     setTimeout(() => {
-      setAlertVisible(false) // cacher l'alerte après 3 secondes
+      setAlertVisible(false)
     }, 3000)
+  }
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token)
   }
 
   const containerVariants = {
@@ -103,10 +116,22 @@ export default function ContactForm() {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6LdSO2wqAAAAAC-8UkKhU00VOW7vATD7rzoZqUMa"
+              onChange={handleCaptchaChange}
+            />
+          </div>
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full bg-[#fd053f] text-white font-bold py-3 px-4 rounded-full hover:bg-[#e0042f] transition-colors duration-300"
+              className={`w-full font-bold py-3 px-4 rounded-full transition-colors duration-300 ${
+                captchaToken
+                  ? 'bg-[#fd053f] text-white hover:bg-[#e0042f]'
+                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              }`}
+              disabled={!captchaToken}
             >
               Envoyer
             </button>

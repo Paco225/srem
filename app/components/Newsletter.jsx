@@ -1,26 +1,36 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Newsletter = () => {
-  const [projectName, setProjectName] = useState('');
   const [email, setEmail] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
+  const recaptchaRef = useRef();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page lors de la soumission
+    e.preventDefault();
     if (email.trim() === '') {
       alert('Le champ email est requis');
       return;
     }
-    // Affiche un message de succès et réinitialise les champs
+    if (!recaptchaValue) {
+      alert('Veuillez valider le reCAPTCHA');
+      return;
+    }
+    // Traitement du formulaire ici
     setSuccessMessage('Votre demande a été envoyée avec succès !');
-    setProjectName('');
     setEmail('');
+    recaptchaRef.current.reset();
+    setRecaptchaValue(null);
     
-    // Cache le message après quelques secondes
     setTimeout(() => {
       setSuccessMessage('');
-    }, 3000); // Le message disparaît après 3 secondes
+    }, 3000);
+  };
+
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
   };
 
   return (
@@ -38,22 +48,28 @@ const Newsletter = () => {
         <p className="text-white mb-8 text-center">
         Inscrivez-vous à notre newsletter et découvrez nos services de restauration <br /> dédiés aux travailleurs miniers !        </p>
         
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row justify-center">
-     
-          <input
-            type="email"
-            placeholder="Entrer votre email"
-            className="px-4 py-3 w-full sm:w-auto sm:flex-grow-0 bg-white text-black focus:outline-none"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+        <form onSubmit={handleSubmit} className="flex flex-col items-center">
+          <div className="flex flex-col sm:flex-row justify-center w-full mb-4">
+            <input
+              type="email"
+              placeholder="Entrer votre email"
+              className="px-4 py-3 w-full sm:w-auto sm:flex-grow bg-white text-black focus:outline-none rounded-l-lg"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-black text-white rounded-r-lg hover:bg-gray-800 transition duration-300 mt-2 sm:mt-0"
+            >
+              Envoyer
+            </button>
+          </div>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LdSO2wqAAAAAC-8UkKhU00VOW7vATD7rzoZqUMa"
+            onChange={handleRecaptchaChange}
           />
-          <button
-            type="submit"
-            className="px-6 py-3 bg-black text-white rounded-r-lg hover:bg-gray-800 transition duration-300"
-          >
-            Envoyer
-          </button>
         </form>
 
         {successMessage && (
